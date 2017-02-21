@@ -1,0 +1,73 @@
+Java 类的结构总结
+
+1.类的结构：
+	属性  方法  构造方法
+	
+2.类的创建：【访问权限修饰符】【修饰符】 class  类名{类体}
+  eg：   class Student { 
+	 
+	  }
+	  
+    注：访问权限修饰符： public(公有的) protected(受保护的) private(私有的)
+            修饰符：static(静态的) final(常量)  abstract(抽象的) synchronized(同步的)
+
+3.属性的声明：【访问权限修饰符】【修饰符】 数据类型   属性名
+  eg: String name;	// 声明一个 String 类型 的 name 属性
+  	  int age;  
+  	  double salary;
+  	  
+    一般数据类型：String(字符串)、 int(整型，没有小数点)、 double(小数)
+    
+4.方法的声明：【访问权限修饰符】【修饰符】 返回值类型 方法名(形参列表) {方法体}
+  eg: void add(int a, int b){
+  	      System.out.println( a + "+" + b + "=" + a + b);
+  	  }
+  	  
+  	  int add(int a, int b){
+  	      return a + b;
+  	  }
+  注：返回值类型和数据类型一样，如果不需要返回值，则写void
+  	  
+5.构造方法的声明：【访问权限修饰符】 类名 (){ 方法体  }
+  eg:  Student(){}	// 默认的无参构造方法
+  	   Student(String name, int age){
+  	       this.name = name;
+  	       this.age = age;
+  	   }
+  	   
+ 6.一个类的例子
+   //  创建一个类
+   class Car{   //  类
+       String name;   //属性 
+       
+       
+       //  构造方法
+       Car(){}  // 无参构造方法
+       
+       Car(String name) {    //有参构造方法
+           this.name = name; 
+       }
+       
+       
+       String getName(){   // 方法
+           return name;
+       }
+   
+   }
+   
+  7.main方法
+      如果一个类需要运行，那么类里面需要有main方法。
+      所有的输出语句必须写在main方法里，或者通过main方法来调用。
+   main方法作为一个静态（static） 方法，所有在main方法里面调用的数据必须是静态的（用static修饰）。
+      main方法的定义：
+      public static void main(String[] args ){
+      
+      }
+      
+   假如现在这个main方法是上面Car类里面的方法，那么在main里面直接调用getName()就会报错，因为
+   getName()并不是静态的方法，如果要调用可以有两个方法，第一个是把getName()修改成一个static
+   的方法，第二个是创建一个Car类的对象，使用对象来调用：
+     eg： Car car = new Car()
+         car.getName();
+     
+	   

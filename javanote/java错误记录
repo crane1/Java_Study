@@ -1,0 +1,8 @@
+1.一般类无法运行，查看main方法是否写错或没有。
+   eg： public static void main(){   // main方法无参数
+           System.out.println("hello");
+       }
+2.unreachable code
+	无法执行到的代码
+	你直接 return false; 或者while(true)
+	后面的代码是执行不了的
