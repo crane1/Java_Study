@@ -1,6 +1,6 @@
 package day0224;
 
-public class Stationery {
+public abstract class Stationery {
 	private String name;
 	private double price;
 	private boolean saled;
