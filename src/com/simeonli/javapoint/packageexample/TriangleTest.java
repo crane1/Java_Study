@@ -1,4 +1,4 @@
-package Test;
+package com.simeonli.javapoint.packageexample;
 
 import day0213.Triangle;
 

@@ -25,7 +25,13 @@ public class Passager {
 	public String toString() {
 		return "³Ë¿Í£º" + name + ", ³µÆ±£º" + teckit;
 	}
+	public  void buyTeckit(Teckit teckit){
+		BuyTeckitThread thread = new BuyTeckitThread(teckit, this);
+		thread.start();
+	}
 	
-	
-	
+	public  void returnTeckit(Teckit teckit){
+		ReturnTeckitThread thread = new ReturnTeckitThread(this, teckit);
+		thread.start();
+	}
 }

@@ -18,9 +18,7 @@ public class Person {
 		this.phoneNumber = phoneNumber;
 		this.idCard = idCard;
 	}
-	
-	
-	
+
 	public String getName() {
 		return name;
 	}

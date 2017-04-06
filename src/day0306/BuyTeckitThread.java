@@ -9,20 +9,22 @@ public class BuyTeckitThread extends Thread{
 		this.pas = pas;
 	}
 	
-	public void run(){
-		synchronized (teckit) {
-			if (teckit == null){
-				System.out.println("对不起，票已卖出，请耐心等待");
+	public  void run(){
+		System.out.println(pas.getName() + "准备买票" + teckit);
+		synchronized(teckit){
+			Teckit t = SaleSystem.buyTeckit(pas, teckit);
+			if (t != null){
+				System.out.println(pas.getName() + "成功购票" + teckit);
+			}
+			while(t == null){
+				System.out.println(pas.getName() + ",对不起，票已卖出，请耐心等待");
 				try {
 					teckit.wait();
 				} catch (InterruptedException e) {
-					// TODO Auto-generated catch block
 					e.printStackTrace();
 				}
-			} else{
-				pas.setTeckit(teckit);
-				System.out.println(pas.getName() + "成功购得车票" + teckit);
 			}
 		}
+		
 	}
 }

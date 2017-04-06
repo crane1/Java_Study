@@ -11,9 +11,14 @@ public class ReadSrcText {
 		
 		try {
 			FileReader fr = new FileReader(file);
+			System.out.println(file.length());
 			char[] ch = new char[1024];
+			int i = 0;
 			while(fr.read(ch) != -1){
+				System.out.println(i++);
 				System.out.println(new String(ch));
+				ch = null;
+				ch = new char[1024];
 			}
 			
 		} catch (FileNotFoundException e) {
